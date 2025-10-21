@@ -1,6 +1,47 @@
 # Recording Angel Python API
 
-Real-time audio transcription API with AI paragraph organization and JWT authentication.
+**Recording Angel** is a comprehensive real-time audio transcription platform designed specifically for religious organizations and meeting environments. This Python-based API provides seamless real-time audio transcription with intelligent AI-powered text organization, secure authentication, and role-based access control.
+
+## What is Recording Angel?
+
+Recording Angel transforms live meetings, conferences, and religious gatherings by providing:
+
+- **Real-time Transcription**: Live audio-to-text conversion with minimal latency
+- **AI-Powered Organization**: Intelligent paragraph structuring and text refinement using Google Gemini
+- **Religious Organization Ready**: Built-in role hierarchy for church leadership structures
+- **Session Management**: Create, join, and manage transcription sessions with ease
+- **Secure Architecture**: Enterprise-grade authentication with JWT tokens and refresh mechanisms
+
+Perfect for stake conferences, ward meetings, missionary training, and any religious gathering where accurate, real-time transcription is needed.
+
+## Technology Stack
+
+- **Framework**: FastAPI (Python 3.8+)
+- **Database**: PostgreSQL/SQLite with SQLAlchemy ORM
+- **Authentication**: JWT tokens with BCrypt password hashing
+- **Real-time Communication**: WebSockets
+- **Audio Transcription**: AssemblyAI API
+- **AI Text Processing**: Google Gemini API
+- **Package Management**: UV (ultra-fast Python package installer)
+- **Deployment**: Uvicorn ASGI server
+
+## Architecture Overview
+
+The Recording Angel API follows a modern, scalable architecture:
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Client App    │◄──►│  FastAPI Server  │◄──►│   Database      │
+│  (Web/Mobile)   │    │                  │    │ (PostgreSQL)    │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                              │
+                              ▼
+                       ┌──────────────────┐
+                       │  External APIs   │
+                       │ • AssemblyAI     │
+                       │ • Google Gemini  │
+                       └──────────────────┘
+```
 
 ## Features
 
